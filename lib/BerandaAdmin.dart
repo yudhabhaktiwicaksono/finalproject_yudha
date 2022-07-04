@@ -4,30 +4,29 @@ import 'Berita_Kampus.dart';
 import 'Bikam.dart';
 import 'Keuangan.dart';
 import 'Kontrak.dart';
-import 'Pengajuan.dart';
+import 'package:finalproject_yudha/PengajuanAdmin.dart';
 import 'Presensi.dart';
 import 'Rna.dart';
 import 'Rps.dart';
 import 'Seminar.dart';
 import 'Transkip_Nilai.dart';
 import 'Ujian_Semester.dart';
-import 'Profile.dart';
+import 'ProfilAdmin.dart';
 import 'package:flutter/material.dart';
 import 'Theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Khs_Pages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-class home_page extends StatefulWidget {
+class BerandaAdmin extends StatefulWidget {
   final String username;
-  home_page({required this.username});
+  BerandaAdmin({required this.username});
 
   @override
-  State<home_page> createState() => _home_pageState();
+  State<BerandaAdmin> createState() => _BerandaAdminState();
 }
 
-class _home_pageState extends State<home_page> {
+class _BerandaAdminState extends State<BerandaAdmin> {
   late SharedPreferences logindata;
   @override
   void initState() {
@@ -61,7 +60,7 @@ class _home_pageState extends State<home_page> {
           ),
           Column(
             children: [
-              profile(),
+              ProfileAdmin(),
             ],
           ),
           Positioned(
@@ -219,7 +218,7 @@ class _home_pageState extends State<home_page> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => PengajuanPage(),
+                            builder: (context) => PengajuanAdmin(),
                           ),
                         );
                       },

@@ -8,6 +8,7 @@ import 'dart:async';
 import "package:http/http.dart" as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:finalproject_yudha/BerandaAdmin.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
             builder: (context) => home_page(username: "",)));
       } else if (dbuser[0]['mode'] == 'admin') {
         Navigator.push(context, MaterialPageRoute(
-            builder: (context) => home_page(username: "",)));
+            builder: (context) => BerandaAdmin(username: "",)));
       }
       setState(() {
         username = dbuser[0]['username'];
@@ -119,7 +120,7 @@ class _SignInPageState extends State<SignInPage> {
                         Icons.person,
                       ),
                       filled: true,
-                      hintText: "Masukan NIM",
+                      hintText: "Masukan Username",
                       hintStyle: GoogleFonts.poppins(
                         fontSize: 15,
                         color: Color(0xff999999),

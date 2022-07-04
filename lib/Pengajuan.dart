@@ -29,7 +29,7 @@ class _PengajuanPageState extends State<PengajuanPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xff6B46C2),
         title: Text(
           "Pengajuan",
           style: TextStyle(color: Colors.black, fontSize: 25.0),
@@ -38,8 +38,7 @@ class _PengajuanPageState extends State<PengajuanPage> {
       ),
       body: Form(
         child: Container(
-          color: Color(0xff6B46C2),
-          child: ListView(
+          child: Column(
             children: <Widget>[
               Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
@@ -100,13 +99,13 @@ class _PengajuanPageState extends State<PengajuanPage> {
               ),
               Padding(padding: EdgeInsets.all(10.0)),
               Container(
-                  width: 200,
+                  width: 100,
                   height: 45,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Color(0xff6B46C2),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0))),
+                            borderRadius: BorderRadius.circular(5.0))),
                     onPressed: () {
                       _kirim();
                     },

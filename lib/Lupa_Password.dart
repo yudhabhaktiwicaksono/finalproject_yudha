@@ -13,10 +13,18 @@ class lupa_password extends StatefulWidget {
 }
 
 class _lupa_passwordState extends State<lupa_password> {
+  bool passwordVisible = false;
+
   TextEditingController nim = TextEditingController();
   TextEditingController username = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  void togglePassword() {
+    setState(() {
+      passwordVisible = !passwordVisible;
+    });
+  }
 
 
   _save() async {
@@ -161,10 +169,19 @@ class _lupa_passwordState extends State<lupa_password> {
                 children: [
                   TextFormField(
                     controller: password,
+                    obscureText: !passwordVisible,
                     decoration: InputDecoration(
                       fillColor: Color(0xffFFFFFF),
                       prefixIcon: Icon(
                         Icons.vpn_key,
+                      ),
+                      suffixIcon: IconButton(
+                        color: Colors.purple,
+                        splashRadius: 1,
+                        icon: Icon(passwordVisible
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined),
+                        onPressed: togglePassword,
                       ),
                       filled: true,
                       hintText: "Masukan Password",
